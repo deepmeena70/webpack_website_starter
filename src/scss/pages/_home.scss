@@ -1,0 +1,240 @@
+body {
+    background-color: $black;
+}
+
+#play,
+#pause {
+    position: absolute;
+    width: 13em;
+    padding-left: 43vw;
+    padding-top: 10vh;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#pause {
+    transform: scale(0);
+}
+
+#home {
+    overflow-y: hidden;
+}
+
+#know-more {
+    position: fixed;
+    bottom: 100px;
+    left: 45%;
+    z-index: 99;
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: 19px;
+        letter-spacing: 1.5px;
+        width: 150px;
+        height: 40px;
+        border-radius: 15px;
+    }
+}
+
+.gradient-border {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+    opacity: 0.85;
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(77deg, #ef4e7b, #a166ab, #5073b8, green);
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#intro {
+    position: absolute;
+    transform: scale(0);
+    top: 200px;
+    left: 25%;
+    width: 800px;
+    font-size: 3em;
+    text-align: center;
+    overflow: hidden;
+    p {
+        position: relative;
+    }
+}
+
+#main-container {
+    display: grid;
+    grid-template: "h" "n" "p" "f"/auto;
+    gap: 2em;
+}
+
+header {
+    grid-area: h;
+}
+
+nav {
+    grid-area: n;
+    padding-top: 1em;
+}
+
+#sub-container {
+    margin-left: 5em;
+    margin-right: 5em;
+    overflow-x: hidden;
+}
+
+#page {
+    grid-area: p;
+    overflow: hidden;
+}
+
+#p-learn {
+    margin-top: 2em;
+    height: 500px;
+    .title {
+        font-size: 3em;
+    }
+}
+
+footer {
+    grid-area: f;
+}
+
+#logo {
+    margin: 2% 0 0 40%
+}
+
+#desktop-menu {
+    margin-left: 33%;
+    font-size: 1.6em;
+    .menu-item {
+        margin-right: 4%;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+#enquiry-btn {
+    position: fixed;
+    bottom: 100px;
+    left: 70%;
+    button {
+        width: 120px;
+        padding: 8px;
+        background: transparent;
+        color: inherit;
+    }
+}
+
+#enquiry-form {
+    transform: scale(0);
+    position: absolute;
+    width: 450px;
+    height: 538px;
+    overflow: hidden;
+    bottom: 12px;
+    right: 5px;
+    border: 0.5px solid grey;
+    backdrop-filter: blur(10px);
+    .title {
+        align-items: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .close_enq_form {
+        cursor: pointer;
+        width: 22px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        img {
+            width: 100%;
+        }
+    }
+    div {
+        width: 100%;
+        overflow: hidden;
+        margin: 5px;
+    }
+    form {
+        input,
+        textarea {
+            background-color: rgba(grey, 0.1);
+            border: 2px solid rgba($secondary-color, 1);
+            padding-left: 20px;
+            padding-right: 20px;
+            color: inherit;
+            width: 398px;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: lightgrey;
+        }
+        input:focus,
+        textarea:focus {
+            outline: none;
+            background: rgba($black, 0.8);
+        }
+        input {
+            height: 50px;
+        }
+        textarea {
+            resize: none;
+            height: 200px;
+            padding-top: 20px;
+        }
+        input[type=submit] {
+            width: 438px;
+            animation: submitAnim 2s linear infinite;
+        }
+    }
+    @keyframes submitAnim {
+        0% {
+            box-shadow: inset 0 0 5px #c60055;
+        }
+        30% {
+            box-shadow: inset 0 0 30px #140078;
+        }
+        70% {
+            box-shadow: inset 0 0 12px #32cb00;
+        }
+        100% {
+            box-shadow: inset 0 0 5px #c60055;
+        }
+    }
+}
+
+#chat-bot {
+    position: fixed;
+    bottom: 100px;
+    left: 22%;
+    button {
+        width: 120px;
+        padding: 8px;
+        background: transparent;
+        color: inherit;
+    }
+}
