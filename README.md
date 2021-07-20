@@ -1,3 +1,3 @@
-# web_cheetah_tech_web_template_v1
-WebCheetahTech website template
-author: Deep Meena
+# web_website_starter
+A basic webpack website starter setup
+author: Deep M.
